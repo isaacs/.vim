@@ -1,0 +1,30 @@
+set mouse=a
+set ruler
+set term=xterm-256color
+color desertEx
+"color fruit
+set nohls
+map <Leader>. :tabn<CR>
+"set shellcmdflag="-ic"
+map <D-y> :!echo hi<CR>
+"map <M-c> "*y
+"map <M-x> "*d
+"map <M-v> :r !pbpaste<CR>
+set clipboard=unnamed
+set wrap
+set modelines=0
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set cul
+set ttyfast
+set autoindent
+set showmode
+set showcmd
+set visualbell
+nnoremap / /\v
+vnoremap / /\v
+set colorcolumn=85
+nnoremap j gj
+nnoremap k gk
