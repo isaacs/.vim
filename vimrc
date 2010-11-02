@@ -1,5 +1,5 @@
 set nocompatible
-
+set encoding=utf-8
 let mapleader=","
 set number
 set ruler
