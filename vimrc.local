@@ -2,14 +2,11 @@ set mouse=a
 set ruler
 set term=xterm-256color
 color desertEx
-"color fruit
+color fruit
+map :Q :q
+color camo
 set nohls
 map <Leader>. :tabn<CR>
-"set shellcmdflag="-ic"
-map <D-y> :!echo hi<CR>
-"map <M-c> "*y
-"map <M-x> "*d
-"map <M-v> :r !pbpaste<CR>
 set clipboard=unnamed
 set wrap
 set modelines=0
@@ -25,6 +22,12 @@ set showcmd
 set visualbell
 nnoremap / /\v
 vnoremap / /\v
-set colorcolumn=85
+if exists("&colorcolumn")
+  set colorcolumn=80
+endif
 nnoremap j gj
 nnoremap k gk
+" make x delete and throw away
+" d already deletes and yanks
+noremap x "_x
+omap Q q!
