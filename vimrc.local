@@ -36,3 +36,12 @@ endfunction
 com -bang Q q<bang>
 com -bang W w<bang> <args>
 com -bang WQ wq<bang> <args>
+
+" super annoying typos
+iab pacakges packages
+iab pacakge package
+iab verison version
+iab verisons versions
+
+map J <C-e>
+map K <C-y>
