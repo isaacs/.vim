@@ -29,4 +29,10 @@ nnoremap k gk
 " make x delete and throw away
 " d already deletes and yanks
 noremap x "_x
-omap Q q!
+" this bit makes Q, W and WQ work just like their lowercase counterparts
+function Quit()
+  :q
+endfunction
+com -bang Q q<bang>
+com -bang W w<bang> <args>
+com -bang WQ wq<bang> <args>
