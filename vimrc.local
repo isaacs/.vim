@@ -4,16 +4,22 @@ set term=xterm-256color
 color fruit
 color camo
 color desertEx
+" color ironman
+" sy off
 set nohls
 map <Leader>. :tabn<CR>
+" this makes it use the system clipboard
+" whenever yanking to the "unnamed" register.
 set clipboard=unnamed
 set wrap
 set modelines=0
 set tabstop=2
+set expandtab
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 set cul
+set nocul
 set ttyfast
 set autoindent
 set showmode
@@ -26,18 +32,23 @@ if exists("&colorcolumn")
 endif
 nnoremap j gj
 nnoremap k gk
-" make x delete and throw away
-" d already deletes and yanks
-noremap x "_x
+" make xX use the "x" register, rather than the default register
+" d already deletes and yanks to the default register
+noremap x "xx
+noremap X "xX
+" make cC yank to the "c" register.
+" it's rare that you want to correct and then re-paste, but possible.
+noremap c "cc
+noremap C "cC
 " this bit makes Q, W and WQ work just like their lowercase counterparts
-function Quit()
-  :q
-endfunction
+" function Quit()
+"   :q
+" endfunction
 com -bang Q q<bang>
 com -bang W w<bang> <args>
 com -bang WQ wq<bang> <args>
 
-" super annoying typos
+" super annoying typos if you maintain a pacakge manager
 iab pacakges packages
 iab pacakge package
 iab verison version
@@ -45,3 +56,15 @@ iab verisons versions
 
 map J <C-e>
 map K <C-y>
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+
+" f1, you are my nemesis.
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" escape is so far away
+noremap <Leader>m <Esc>
+inoremap <Leader>m <Esc>
