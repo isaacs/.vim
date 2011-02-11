@@ -53,8 +53,11 @@ iab pacakges packages
 iab pacakge package
 iab verison version
 iab verisons versions
+iab nodE_modules node_modules
 
 map J <C-e>
+inoremap JJJJ <Esc><C-e><C-e><C-e>
+inoremap KKKK <Esc><C-y><C-y><C-y>
 map K <C-y>
 map <C-j> <C-w>j
 map <C-k> <C-w>k
