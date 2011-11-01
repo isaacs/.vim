@@ -47,6 +47,7 @@ noremap C "cC
 com -bang Q q<bang>
 com -bang W w<bang> <args>
 com -bang WQ wq<bang> <args>
+com -bang Wq wq<bang> <args>
 
 " super annoying typos if you maintain a pacakge manager
 iab pacakges packages
@@ -54,6 +55,11 @@ iab pacakge package
 iab verison version
 iab verisons versions
 iab nodE_modules node_modules
+iab teh the
+iab hte the
+iab wiht with
+iab eaisly easily
+iab ofr for
 
 map J <C-e>
 inoremap JJJJ <Esc><C-e><C-e><C-e>
