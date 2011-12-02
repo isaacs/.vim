@@ -4,13 +4,28 @@ set term=xterm-256color
 color fruit
 color camo
 color desertEx
+
 " color ironman
 " sy off
+
+" when using a projector, use a light color scheme and no syntax
+function Pres ()
+  :colorscheme dawn
+  :syntax off
+endfunction
+map <Leader>pres :call Pres()<CR>
+
 set nohls
-map <Leader>. :tabn<CR>
+
+set hls
+noremap <Leader><Space> :noh<CR>:call clearmatches()<CR>
+
+" map <Leader>. :tabn<CR>
+
 " this makes it use the system clipboard
 " whenever yanking to the "unnamed" register.
 set clipboard=unnamed
+
 set wrap
 set modelines=0
 set tabstop=2
@@ -32,18 +47,18 @@ if exists("&colorcolumn")
 endif
 nnoremap j gj
 nnoremap k gk
+
 " make xX use the "x" register, rather than the default register
 " d already deletes and yanks to the default register
 noremap x "xx
 noremap X "xX
+
 " make cC yank to the "c" register.
 " it's rare that you want to correct and then re-paste, but possible.
 noremap c "cc
 noremap C "cC
+
 " this bit makes Q, W and WQ work just like their lowercase counterparts
-" function Quit()
-"   :q
-" endfunction
 com -bang Q q<bang>
 com -bang W w<bang> <args>
 com -bang WQ wq<bang> <args>
@@ -61,10 +76,17 @@ iab wiht with
 iab eaisly easily
 iab ofr for
 
-map J <C-e>
+" shift to move the window, not the cursor.
 inoremap JJJJ <Esc><C-e><C-e><C-e>
 inoremap KKKK <Esc><C-y><C-y><C-y>
+inoremap HHHH <Esc>zhzhzhzhzhzh
+inoremap LLLL <Esc>zlzlzlzlzlzl
+map J <C-e>
 map K <C-y>
+map H zhzh
+map L zlzl
+
+" control to switch windows
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
