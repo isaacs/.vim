@@ -99,3 +99,6 @@ imap <F1> <Esc>
 " escape is so far away
 noremap <Leader>m <Esc>
 inoremap <Leader>m <Esc>
+
+au BufNewFile,BufRead *.ejs set filetype=ejs
+au BufNewFile,BufRead *.ejs so $HOME/.vim/syntax/jst.vim
